@@ -22,12 +22,7 @@ function pausarFaixa() {
 }
 
 function proximaFaixa() {
-    if (capituloAtual === numeroCapitulos) {
-        capituloAtual = 1;
-    } else {
-        capituloAtual = capituloAtual + 1;
-    }
-
+    capituloAtual == numeroCapitulos ? capituloAtual = 1 : capituloAtual += 1 ;
     audioCapitulo.src = "./books/dom-casmurro/" + capituloAtual + ".mp3";
     tocarFaixa();
     tocando = 1;
@@ -35,24 +30,14 @@ function proximaFaixa() {
 }
 
 function voltarFaixa() {
-    if (capituloAtual === 1) {
-        capituloAtual = numeroCapitulos;
-    } else {
-        capituloAtual = capituloAtual - 1;
-    }
-
+    capituloAtual == 1 ? capituloAtual = numeroCapitulos : capituloAtual -= 1 ;
     audioCapitulo.src = "./books/dom-casmurro/" + capituloAtual + ".mp3";
     tocarFaixa();
     tocando = 1;
     trocarNome();
 }
-//tocando == 0 ? tocarFaixa() : pausarFaixa();?
 function tocarPausar () {
-    if (tocando == 0) {
-        tocarFaixa();
-    } else {
-        pausarFaixa();
-    }
+tocando == 0 ? tocarFaixa() : pausarFaixa();
 }
 
 function trocarNome () {
